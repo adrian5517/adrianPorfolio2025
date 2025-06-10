@@ -1,6 +1,7 @@
 import React from 'react'
 import { ThemeToggle } from '../components/ThemeToggle'
 import { StarBackground } from '@/components/StarBackground'
+import { NavBar } from '@/components/NavBar'
 
 export default function Home() {
   return (
@@ -9,8 +10,8 @@ export default function Home() {
       <ThemeToggle />
       {/* Background Effects */}
       <StarBackground/>
-      
       {/* NavBar */}
+      <NavBar/>
 
       {/* Main Content */}
 

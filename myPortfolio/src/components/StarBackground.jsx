@@ -7,6 +7,12 @@ export const StarBackground = () => {
     useEffect(() => {
         generateStars();
         generateMeteors();
+
+        const handleResize = ()=>{
+            generateStars();
+        };
+        window.addEventListener('resize', handleResize);
+        return()=> window.removeEventListener('resize', handleResize);
         
         // Add interval to continuously generate new meteors
         const interval = setInterval(generateMeteors, 5000);
@@ -64,8 +70,8 @@ export const StarBackground = () => {
                     key={meteor.id}
                     className="meteor animate-meteor"
                     style={{
-                        width: meteor.size + "px",
-                        height: meteor.size * 10 + "px", // Make meteors longer
+                        width: meteor.size +  "px",
+                        height: meteor.size * 20 + "px", // Make meteors longer
                         left: meteor.x + "%",
                         top: meteor.y + "%",
                         animationDelay: meteor.delay,
